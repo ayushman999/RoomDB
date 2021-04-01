@@ -13,7 +13,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Region.class},version = 2,exportSchema = false)
+@Database(entities = {Region.class},version = 3,exportSchema = false)
 @TypeConverters(Converters.class)
 public abstract class RegionDatabase extends RoomDatabase {
     public abstract RegionDAO regionDAO();

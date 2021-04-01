@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_on_primary"
-        android:text="@string/button_save"
+        android:text="@string/button_add"
         android:layout_margin="@dimen/big_padding"
         android:textColor="@color/buttonLabel" />
     <Button

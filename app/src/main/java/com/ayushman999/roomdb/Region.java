@@ -15,8 +15,9 @@ public class Region {
     private String name;
     @ColumnInfo(name="array")
     public ArrayList<String> array;
-    public Region(@NonNull String name)
+    public Region(@NonNull String name,@NonNull ArrayList<String> array)
     {
+        this.array=array;
         this.name=name;
     }
 
@@ -24,7 +25,9 @@ public class Region {
     public String getName() {
         return name;
     }
+/*
     public ArrayList<String> getArray(){return array;}
+*/
     /*@ColumnInfo(name="borders")
     public ArrayList<String> borders;*/
 }

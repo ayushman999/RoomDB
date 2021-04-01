@@ -22,11 +22,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public RegionViewModel viewModel;
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Region word = new Region(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+            Region word = new Region(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringArrayListExtra("array"));
+            System.out.println(word.getName()+"\n"+word.array);
             viewModel.insert(word);
         } else {
             Toast.makeText(

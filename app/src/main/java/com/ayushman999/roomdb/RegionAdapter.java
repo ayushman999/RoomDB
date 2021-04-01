@@ -36,6 +36,12 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionHolder> {
     @Override
     public void onBindViewHolder(@NonNull @NotNull RegionHolder holder, int position) {
         holder.region.setText(regions.get(position).getName());
+        String array="Array:"+"\n";
+        for(int i=0;i<regions.get(position).array.size();i++)
+        {
+            array=array+regions.get(position).array.get(i)+"\n";
+        }
+        holder.arrayView.setText(array);
     }
 
     @Override
@@ -51,8 +57,10 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionHolder> {
 }
 class RegionHolder extends RecyclerView.ViewHolder {
     TextView region;
+    TextView arrayView;
     public RegionHolder(@NonNull @NotNull View itemView) {
         super(itemView);
         region=(TextView) itemView.findViewById(R.id.textView);
+        arrayView=(TextView) itemView.findViewById(R.id.arrayView);
     }
 }
